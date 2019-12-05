@@ -39,12 +39,6 @@
           {{validators.name[0]}}
         </label>
       </div>
-      <div class="form-group col-md-9 mt-2 " style="margin: auto">
-        <input type="email" formControlName="email"  class="form-control input" placeholder="example@email.com">
-        <label class="alert alert-danger" *ngIf="validators.hasOwnProperty('email')">
-          {{validators.email[0]}}
-        </label>
-      </div>
       <div class="form-group col-md-9 mt-2" style="margin: auto">
         <input type="password" class="form-control input" id="password" formControlName="password" placeholder="password">
         <label class="alert alert-danger" for="password" *ngIf="validators.hasOwnProperty('password')">

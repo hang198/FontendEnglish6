@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       name: [''],
-      email: [''],
       password: [''],
       passwordConfirm: [''],
     });
