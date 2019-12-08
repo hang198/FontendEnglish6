@@ -26,22 +26,22 @@ export class CategoryService {
   }
 
   getAll() {
-    return this.http.get(this.apiUrl + '/categories', {headers: this.headers});
+    return this.http.get(this.apiUrl + '/units', {headers: this.headers});
   }
 
   create(data) {
-    return this.http.post(this.apiUrl + '/categories/create', data, {headers: this.headers});
+    return this.http.post(this.apiUrl + '/units/create', data, {headers: this.headers});
   }
 
   delete(id) {
-    return this.http.delete(this.apiUrl + '/categories/' + id + '/delete', {headers: this.headers});
+    return this.http.delete(this.apiUrl + '/units/' + id + '/delete', {headers: this.headers});
   }
 
   getById(id: string) {
-    return this.http.get(this.apiUrl + '/categories/' + id, {headers: this.headers});
+    return this.http.get(this.apiUrl + '/units/' + id, {headers: this.headers});
   }
 
   update(data, id) {
-    return this.http.post(this.apiUrl + '/categories/' + id + '/update', data, {headers: this.headers});
+    return this.http.post(this.apiUrl + '/units/' + id + '/update', data, {headers: this.headers});
   }
 }

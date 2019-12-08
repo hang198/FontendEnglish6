@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Category</title>
+  <title>lesson</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Course Project">
@@ -45,12 +45,11 @@
       <div class="row course_boxes">
 
         <!-- Popular Course Item -->
-        <div class="col-lg-4 course_box" *ngFor="let category of categories">
+        <div class="col-lg-4 course_box" *ngFor="let lesson of lessons">
           <div class="card">
-            <img class="card-img-top" [attr.src]="'http://localhost:8000/api/' + category.image " alt="https://unsplash.com/@kellybrito">
             <div class="card-body text-center">
               <div class="card-title">
-                <a [routerLink]="['/units',category.id]">{{category.name}}</a>
+                <a [routerLink]="['/lessons',lesson.id]">{{lesson.name}}</a>
               </div>
               <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
             </div>
@@ -71,7 +70,7 @@
 
   <!-- Footer -->
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
 </div>
 
 <script src="../../assets/home-page/js/jquery-3.2.1.min.js"></script>

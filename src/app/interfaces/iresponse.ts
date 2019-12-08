@@ -8,9 +8,10 @@ export interface IResponse {
   content?: string;
   correct?: string;
   answers?: any;
-  ask?: any;
+  question?: any;
   category?: any;
-  quiz?: any;
+  lesson?: any;
+  practice?: any;
   user?: any;
   role?: any;
 }

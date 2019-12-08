@@ -13,6 +13,8 @@ import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './admin/users/users.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LessonComponent } from './lesson/lesson.component';
+import { PracticeListComponent } from './practice-list/practice-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     CategoryComponent,
     FooterComponent,
     UsersComponent,
-    DashboardComponent
+    DashboardComponent,
+    LessonComponent,
+    PracticeListComponent
   ],
   imports: [
     BrowserModule,
