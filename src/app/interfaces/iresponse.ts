@@ -9,7 +9,7 @@ export interface IResponse {
   correct?: string;
   answers?: any;
   question?: any;
-  category?: any;
+  unit?: any;
   lesson?: any;
   practice?: any;
   user?: any;

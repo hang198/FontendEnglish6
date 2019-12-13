@@ -77,7 +77,7 @@ export class AuthService {
 
   isAdmin() {
     const role = this.getRole();
-    const index = ['admin', 'manager'].indexOf(role.slug);
+    const index = ['admin'].indexOf(role.slug);
     return index !== -1;
   }
 

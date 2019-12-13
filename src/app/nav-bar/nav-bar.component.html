@@ -1,15 +1,16 @@
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/styles/bootstrap4/bootstrap.min.css">
-  <link href="../../assets/home-page/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/plugins/OwlCarousel2-2.2.1/animate.css">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/styles/main_styles.css">
-  <link rel="stylesheet" type="text/css" href="../../assets/home-page/styles/responsive.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/styles/bootstrap4/bootstrap.min.css">
+  <link href="../../../assets/home-page/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/styles/main_styles.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/home-page/styles/responsive.css">
 </head>
 
 <header class="header d-flex flex-row">
@@ -17,8 +18,8 @@
     <!-- Logo -->
     <div class="logo_container">
       <div class="logo">
-        <img src="../../assets/home-page/images/logo.png" alt="">
-        <span>Quiz</span>
+        <img src="../../../assets/home-page/images/logo.png" alt="">
+        <span>Eng</span>
       </div>
     </div>
 
@@ -26,10 +27,10 @@
     <nav class="main_nav_container" style="background-color: white; box-shadow: none">
       <div class="main_nav">
         <ul class="main_nav_list">
-          <li class="main_nav_item " ><a routerLink="">Trang Chủ</a></li>
-          <li class="main_nav_item"><a routerLink="/units">Thư Mục</a></li>
-          <li class="main_nav_item"><a routerLink="/quiz-list">Về Chúng Tôi</a></li>
-          <li class="main_nav_item"><a routerLink="/contact">Liên Hệ</a></li>
+          <li class="main_nav_item " ><a routerLink=""><i class="material-icons">home</i>Home</a></li>
+          <li class="main_nav_item"><a routerLink="/units">Units</a></li>
+          <li class="main_nav_item"><a routerLink="/fobiden">About Us</a></li>
+          <li class="main_nav_item"><a routerLink="/contact">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -41,9 +42,9 @@
             {{currentUser.name}}
           </span>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" routerLink="/user" >Thông ti cá nhân</a>
-          <a *ngIf="auth.isAdmin()" class="dropdown-item" routerLink="/admin/dashboard/overview" >Trang quản lí</a>
-          <a class="dropdown-item" (click)="authLogout()">Đăng xuất</a>
+          <a class="dropdown-item" routerLink="/user" ><i class="material-icons">contacts</i> Thông ti cá nhân </a>
+          <a *ngIf="auth.isAdmin()" class="dropdown-item" routerLink="/admin/dashboard/overview" ><i class="material-icons"> dashboard</i> Trang quản lí</a>
+          <a class="dropdown-item" (click)="authLogout()"><i class="material-icons">exit_to_app</i>Đăng xuất</a>
         </div>
       </div>
     </div>
