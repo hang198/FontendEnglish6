@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(data).subscribe((response: IResponse) => {
       localStorage.setItem('currentToken', response.token);
       console.log(response);
+      this.router.navigate(['/']);
     }, error => {
       this.validators = error.error.errors;
       console.log(error);

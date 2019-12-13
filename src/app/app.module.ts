@@ -1,20 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import * as $ from 'jquery';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './users/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './users/login/login.component';
-import { CategoryComponent } from './category/category.component';
+import { UnitListComponent } from './unit-list/unit-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './admin/users/users.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { LessonComponent } from './lesson/lesson.component';
-import { PracticeListComponent } from './practice-list/practice-list.component';
+import {LessonListComponent} from './lesson-list/lesson-list.component';
+import { LessonContentComponent } from './lesson-list/lesson-content/lesson-content.component';
+import { ResultPracticeComponent } from './practice-detail-user/result-practice/result-practice.component';
+import {PracticeDetailUserComponent} from './practice-detail-user/practice-detail-user.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatOptionModule} from '@angular/material/core';
+import { OverviewComponent } from './admin/overview/overview.component';
+import { QuestionComponent } from './admin/question/question.component';
+import { ForbidenComponent } from './forbiden/forbiden.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { QuestionDetailsComponent } from './admin/question/question-details/question-details.component';
+import { QuestionEditComponent } from './admin/question/question-edit/question-edit.component';
+import { CreateQuestionComponent } from './admin/question/create-question/create-question.component';
+import { UnitsComponent } from './admin/units/units.component';
+import { CreateUnitComponent } from './admin/units/create-unit/create-unit.component';
+import { EditUnitComponent } from './admin/units/edit-unit/edit-unit.component';
 
 @NgModule({
   declarations: [
@@ -23,18 +42,37 @@ import { PracticeListComponent } from './practice-list/practice-list.component';
     NavBarComponent,
     RegisterComponent,
     LoginComponent,
-    CategoryComponent,
+    UnitListComponent,
     FooterComponent,
     UsersComponent,
     DashboardComponent,
-    LessonComponent,
-    PracticeListComponent
+    LessonListComponent,
+    LessonContentComponent,
+    PracticeDetailUserComponent,
+    ResultPracticeComponent,
+    OverviewComponent,
+    QuestionComponent,
+    ForbidenComponent,
+    NotfoundComponent,
+    QuestionDetailsComponent,
+    QuestionEditComponent,
+    CreateQuestionComponent,
+    UnitsComponent,
+    CreateUnitComponent,
+    EditUnitComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatOptionModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

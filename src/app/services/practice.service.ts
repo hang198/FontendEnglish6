@@ -45,6 +45,37 @@ export class PracticeService {
     return this.http.post(this.apiUrl + '/practices/' + id + '/update', data, {headers: this.headers});
   }
   getByLessonID(id: string) {
-    return this.http.get(this.apiUrl + '/practices/' + id, {headers: this.headers});
+    return this.http.get(this.apiUrl + '/lessons/' + id, {headers: this.headers});
+  }
+  submitResult(data: any) {
+    return this.http.post(this.apiUrl + '/practices/point/create', data, {headers: this.headers});
+  }
+
+  getResult(id) {
+    return this.http.get(this.apiUrl + '/practices/point/' + id, {headers: this.headers});
+  }
+
+  getByUserID(id: string) {
+    return this.http.get(this.apiUrl + '/users/' + id, {headers: this.headers});
+  }
+
+  getUserByPracticeId(id: string) {
+    return this.http.get(this.apiUrl + '/practices/' + id + '/point', {headers: this.headers});
+  }
+
+  getPointsMax(id) {
+    return this.http.get(this.apiUrl + '/points/' + id + '/user', {headers: this.headers});
+  }
+
+  getPointsByPracticeSort(id) {
+    return this.http.get(this.apiUrl + '/points/' + id + '/practice-sort', {headers: this.headers});
+  }
+
+  getPointsByPracticeTime(id) {
+    return this.http.get(this.apiUrl + '/points/' + id + '/practice-time', {headers: this.headers});
+  }
+
+  getPointsByTime(id) {
+    return this.http.get(this.apiUrl + '/points/' + id + '/time', {headers: this.headers});
   }
 }
