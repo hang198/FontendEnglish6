@@ -42,9 +42,9 @@ export class EditLessonComponent implements OnInit {
   getLessonById() {
     this.lessonService.getByID(this.id).subscribe((response: IResponse) => {
       this.form.patchValue({
-        name: response.data[0].name,
-        content: response.data[0].content,
-        unit_id: response.data[0].unit_id
+        name: response.data.name,
+        content: response.data.content,
+        unit_id: response.data.unit_id
       });
       console.log(response.data);
     });

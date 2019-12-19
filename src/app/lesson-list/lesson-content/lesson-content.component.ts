@@ -35,7 +35,7 @@ export class LessonContentComponent implements OnInit {
       response: IResponse) => {
       this.lesson = response.data;
     }, error => {
-      console.log(error);
+      console.log(error.error);
     });
   }
   getPracticeByLessonId() {
