@@ -21,6 +21,7 @@ export class UsersComponent implements OnInit {
   getAll() {
     this.userService.getAll().subscribe((response: IResponse) => {
       this.users = response.data;
+      console.log(response.data);
     }, error => {
       console.log(error);
     });
