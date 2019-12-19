@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {IResponse} from '../../interfaces/iresponse';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  user;
+
+  constructor(private auService: AuthService) {
+  }
 
   ngOnInit() {
+    this.getUser();
+  }
+
+  getUser() {
+    this.auService.getUser().subscribe((response: IResponse) => {
+      this.user = response.data;
+      console.log(response.data);
+    });
   }
 
 }

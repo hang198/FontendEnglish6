@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {IUser} from "../../interfaces/iuser";
+import {IResponse} from "../../interfaces/iresponse";
 
 @Component({
   selector: 'app-user-info',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  user: IUser = {};
+
+  constructor(private auService: AuthService) {
+  }
 
   ngOnInit() {
+    this.getUser();
+  }
+
+  getUser() {
+    this.auService.getUser().subscribe((response: IResponse) => {
+      this.user = response.data;
+    });
   }
 
 }

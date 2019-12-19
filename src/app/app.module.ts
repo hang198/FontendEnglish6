@@ -52,7 +52,6 @@ import { UserResultPracticesComponent } from './users/user-result-practices/user
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserChangePasswordComponent } from './users/user-change-password/user-change-password.component';
 import { PracticeStatisticComponent } from './admin/practice-statistic/practice-statistic.component';
-
 @NgModule({
   declarations: [
     AppComponent,
