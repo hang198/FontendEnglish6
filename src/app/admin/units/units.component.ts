@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IUnit} from '../../interfaces/iunit';
 import {UnitService} from '../../services/unit.service';
 import {AuthorizationService} from '../../services/authorization.service';
-import {IResponse} from "../../interfaces/iresponse";
+import {IResponse} from '../../interfaces/iresponse';
 
 @Component({
   selector: 'app-units',

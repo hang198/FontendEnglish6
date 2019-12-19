@@ -10,6 +10,7 @@ export class PracticeService {
 
   apiUrl: string;
   headers: HttpHeaders;
+  userId;
 
   constructor(private http: HttpClient, private auth: AuthService) {
     this.setHeaders();
@@ -45,7 +46,7 @@ export class PracticeService {
     return this.http.post(this.apiUrl + '/practices/' + id + '/update', data, {headers: this.headers});
   }
   getByLessonID(id: string) {
-    return this.http.get(this.apiUrl + '/lessons/' + id, {headers: this.headers});
+    return this.http.get(this.apiUrl + '/practices/' + id, {headers: this.headers});
   }
   submitResult(data: any) {
     return this.http.post(this.apiUrl + '/practices/point/create', data, {headers: this.headers});
@@ -77,5 +78,11 @@ export class PracticeService {
 
   getPointsByTime(id) {
     return this.http.get(this.apiUrl + '/points/' + id + '/time', {headers: this.headers});
+  }
+  setId(id) {
+    this.userId = id;
+  }
+  getID() {
+    return this.userId;
   }
 }

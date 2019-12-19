@@ -1,0 +1,42 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Create Lesson</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="form-group col-md-12">
+                      <label>Lesson name:</label>
+                      <input type="text" formControlName="name" class="form-control mb-2">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label>Content:</label>
+                      <textarea type="text" formControlName="content" class="form-control mb-2"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label>Unit:</label>
+                      <select formControlName="unit_id" class="form-control mb-2">
+                        <option value="">Unit</option>
+                        <option *ngFor="let unit of units;" value="{{unit.id}}">{{unit.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <button [disabled]="form.invalid" class="btn btn-primary btn-sm">Tạo</button>
+                    <a class="btn btn-danger btn-sm ml-2" routerLink="/admin/dashboard/quiz"> Trở Về</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,8 +28,8 @@ export class LessonListComponent implements OnInit {
   getLessonByUnitId() {
     this.lessonService.getByUnitID(this.id).subscribe((
       response: IResponse) => {
-      this.lessons = response.data.lessons;
-      this.unit = response.data;
+      this.lessons = response.data;
+      this.unit = response.unit;
     }, error => {
       console.log(error);
     });

@@ -4,8 +4,8 @@ import {ILesson} from '../../interfaces/ilesson';
 import {IUnit} from '../../interfaces/iunit';
 import {LessonService} from '../../services/lesson.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IPractice} from "../../interfaces/ipractice";
-import {PracticeService} from "../../services/practice.service";
+import {IPractice} from '../../interfaces/ipractice';
+import {PracticeService} from '../../services/practice.service';
 
 @Component({
   selector: 'app-lesson-content',
@@ -33,14 +33,14 @@ export class LessonContentComponent implements OnInit {
   getLessonByUnitId() {
     this.lessonService.getByUnitID(this.id).subscribe((
       response: IResponse) => {
-      this.lesson = response.data.lessons;
+      this.lesson = response.data;
     }, error => {
       console.log(error);
     });
   }
   getPracticeByLessonId() {
     this.practiceService.getByLessonID(this.id).subscribe((res: IResponse) => {
-      this.practice = res.data.practice;
+      this.practice = res.data;
     });
   }
 }

@@ -22,6 +22,23 @@ import {CreateQuestionComponent} from './admin/question/create-question/create-q
 import {UnitsComponent} from './admin/units/units.component';
 import {CreateUnitComponent} from './admin/units/create-unit/create-unit.component';
 import {EditUnitComponent} from './admin/units/edit-unit/edit-unit.component';
+import {UserDetailComponent} from './admin/users/user-detail/user-detail.component';
+import {UserStatisticComponent} from './admin/users/user-statistic/user-statistic.component';
+import {UserStatisticFilterComponent} from './admin/users/user-statistic-filter/user-statistic-filter.component';
+import {UserStatisticFilterByTimeComponent} from './admin/users/user-statistic-filter-by-time/user-statistic-filter-by-time.component';
+import {EditUserComponent} from './admin/users/edit-user/edit-user.component';
+import {ContactComponent} from './contact/contact.component';
+import {PracticesComponent} from './admin/practices/practices.component';
+import {CreatePracticeComponent} from './admin/practices/create-practice/create-practice.component';
+import {EditPracticeComponent} from './admin/practices/edit-practice/edit-practice.component';
+import {CreateLessonComponent} from './admin/lessons/create-lesson/create-lesson.component';
+import {EditLessonComponent} from './admin/lessons/edit-lesson/edit-lesson.component';
+import {LessonsComponent} from './admin/lessons/lessons.component';
+import {UserProfileComponent} from './users/user-profile/user-profile.component';
+import {UserInfoComponent} from './users/user-info/user-info.component';
+import {UserResultPracticesComponent} from './users/user-result-practices/user-result-practices.component';
+import {UserEditComponent} from './users/user-edit/user-edit.component';
+import {UserChangePasswordComponent} from './users/user-change-password/user-change-password.component';
 
 
 const routes: Routes = [
@@ -37,14 +54,15 @@ const routes: Routes = [
       {path: ':id/result', component: ResultPracticeComponent}]
   },
   {path: 'forbidden', component: ForbidenComponent},
-  // {
-  //   path: 'user', component: UserProfileComponent, children: [
-  //     {path: '', component: UserInfoComponent},
-  //     {path: 'result', component: UserResultTestsComponent},
-  //     {path: 'edit', component: UseEditComponent},
-  //     {path: 'change-password', component: UseChangePasswordComponent}
-  //   ], canActivateChild: [AuthGuardService]
-  // },
+  {path: 'contact', component: ContactComponent},
+  {
+    path: 'user', component: UserProfileComponent, children: [
+      {path: '', component: UserInfoComponent},
+      {path: 'result', component: UserResultPracticesComponent},
+      {path: 'edit', component: UserEditComponent},
+      {path: 'change-password', component: UserChangePasswordComponent}
+    ], canActivateChild: [AuthGuardService]
+  },
   {
     path: 'admin/dashboard', component: DashboardComponent,
     canActivateChild: [AuthGuardService, AuthorizationGuardGuard],
@@ -55,25 +73,25 @@ const routes: Routes = [
       {path: 'question/details/:id', component: QuestionDetailsComponent},
       {path: 'question/edit/:id', component: QuestionEditComponent},
       {path: 'question/create', component: CreateQuestionComponent},
-      // {path: 'practices', component: PracticeComponent},
-      // {path: 'practices/create', component: CreatePracticeComponent},
-      // {path: 'practice/:id/edit', component: EditPracticeComponent},
-      // {path: 'lessons', component: LessonListComponent},
-      // {path: 'lesson-list/create', component: CreateLessonComponent},
-      // {path: 'lesson-list/:id/edit', component: EditLessonComponent},
+      {path: 'practices', component: PracticesComponent},
+      {path: 'practices/create', component: CreatePracticeComponent},
+      {path: 'practices/:id/edit', component: EditPracticeComponent},
+      {path: 'lessons', component: LessonsComponent},
+      {path: 'lessons/create', component: CreateLessonComponent},
+      {path: 'lessons/:id/edit', component: EditLessonComponent},
       {path: 'units', component: UnitsComponent},
       {path: 'units/create', component: CreateUnitComponent},
       {path: 'units/:id/edit', component: EditUnitComponent},
-      // {path: 'users', component: UsersComponent},
-      // {
-      //   path: 'users/:id', component: UserDetailComponent, children: [
-      //     {path: '', redirectTo: 'statistic', pathMatch: 'full'},
-      //     {path: 'statistic', component: UserStatisticComponent},
-      //     {path: 'statistic-filter', component: UserStatisticFilterComponent},
-      //     {path: 'statistic-time', component: UserStatisticFilterByTimeComponent}
-      //   ]
-      // },
-      // {path: 'users/:id/edit', component: EditUserComponent},
+      {path: 'users', component: UsersComponent},
+      {
+        path: 'users/:id', component: UserDetailComponent, children: [
+          {path: '', redirectTo: 'statistic', pathMatch: 'full'},
+          {path: 'statistic', component: UserStatisticComponent},
+          {path: 'statistic-filter', component: UserStatisticFilterComponent},
+          {path: 'statistic-time', component: UserStatisticFilterByTimeComponent}
+        ]
+      },
+      {path: 'users/:id/edit', component: EditUserComponent},
       // {path: 'practice-statistic', component: PracticeStatisticComponent},
       // {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
     ]
