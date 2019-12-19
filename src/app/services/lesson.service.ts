@@ -44,7 +44,7 @@ export class LessonService {
     return this.http.post(this.apiUrl + '/lessons/' + id + '/update', data, {headers: this.headers});
   }
   getByUnitID(id: string) {
-    return this.http.get(this.apiUrl + '/lessons/' + id, {headers: this.headers});
+    return this.http.get(this.apiUrl + '/lessons/' + 'unit/' + id , {headers: this.headers});
   }
   getByID(id) {
     return this.http.get(this.apiUrl + '/lessons/' + id, {headers: this.headers});

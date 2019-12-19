@@ -50,7 +50,7 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UserResultPracticesComponent } from './users/user-result-practices/user-result-practices.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
-import { UserChangePasswordComponent } from './users/user-change-password/user-change-password.component';
+import {UserChangePasswordComponent} from "./users/user-change-password/user-change-password.component";
 
 @NgModule({
   declarations: [
