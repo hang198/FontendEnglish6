@@ -1,36 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { CateStoryService } from "../../../services/catestory.service";
-import { Router, ActivatedRoute } from "@angular/router";
+import { CateVideoService } from "../../../services/catevideo.service";
+import { Router } from "@angular/router";
 import { AuthorizationService } from "../../../services/authorization.service";
 import { IResponse } from "../../../interfaces/iresponse";
 import {FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-edit-catestory',
-  templateUrl: './edit-catestory.component.html',
-  styleUrls: ['./edit-catestory.component.css']
+  selector: 'app-create-catevideo',
+  templateUrl: './create-catevideo.component.html',
+  styleUrls: ['./create-catevideo.component.css']
 })
-export class EditCateStoryComponent implements OnInit {
+export class CreateCateVideoComponent implements OnInit {
 
   form: FormGroup;
-  errors;
-  catestory_id;
+  errors
 
   constructor(
-    protected cateStoryService: CateStoryService,
-    private router: ActivatedRoute,
+    protected cateVideoService: CateVideoService,
     private route: Router,
     protected authorization: AuthorizationService
   ) { }
 
   ngOnInit() {
-    this.router.params.subscribe(params => {
-      this.catestory_id = params.id;
-      this.initForm();
-      this.cateStoryService.show(this.catestory_id).subscribe((response: IResponse) => {
-        this.form.patchValue(response.data);
-      });
-    })
+    this.initForm();
   }
 
   initForm() {
@@ -50,8 +42,8 @@ export class EditCateStoryComponent implements OnInit {
   }
 
   onSubmit() {
-    this.cateStoryService.update(this.form.value, this.catestory_id).subscribe((response: IResponse) => {
-      this.route.navigate(['/admin/dashboard/catestory']);
+    this.cateVideoService.create(this.form.value).subscribe((response: IResponse) => {
+      this.route.navigate(['/admin/dashboard/catevideo']);
     }, error => {
       const responseErrors = error.error.errors;
       this.errors = responseErrors;

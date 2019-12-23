@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { IQuestion } from "../../interfaces/iquestion";
-import { CateStoryService } from "../../services/catestory.service";
+import { CateVideoService } from "../../services/catevideo.service";
 import { Router } from "@angular/router";
 import { AuthorizationService } from "../../services/authorization.service";
 import { IResponse } from "../../interfaces/iresponse";
 
 @Component({
-  selector: 'app-catestory',
-  templateUrl: './catestory.component.html',
-  styleUrls: ['./catestory.component.css']
+  selector: 'app-catevideo',
+  templateUrl: './catevideo.component.html',
+  styleUrls: ['./catevideo.component.css']
 })
-export class CateStoryComponent implements OnInit {
+export class CateVideoComponent implements OnInit {
 
-  catestories = [];
+  catevideos = [];
   page = 1;
   errors;
-  current_catestory;
+  current_catevideo;
 
   protected keyWord: string;
   protected searchedQuestions: IQuestion[] = [];
 
   constructor(
-    protected cateStoryService: CateStoryService,
+    protected cateVideoService: CateVideoService,
     private route: Router,
     protected authorization: AuthorizationService
   ) { }
@@ -31,17 +31,17 @@ export class CateStoryComponent implements OnInit {
   }
 
   getAll() {
-    this.cateStoryService.index().subscribe((response: IResponse) => {
-      this.catestories = response.data;
+    this.cateVideoService.index().subscribe((response: IResponse) => {
+      this.catevideos = response.data;
     });
   }
 
-  selectCatestory(catestory) {
-    this.current_catestory = catestory;
+  selectCatevideo(catevideo) {
+    this.current_catevideo = catevideo;
   }
 
   delete() {
-    this.cateStoryService.delete(this.current_catestory.id).subscribe((response: IResponse) => {
+    this.cateVideoService.delete(this.current_catevideo.id).subscribe((response: IResponse) => {
       if (response.status === 'success') {
         this.getAll();
       }

@@ -55,6 +55,14 @@ import { CateStoryComponent } from './admin/catestory/catestory.component';
 import { CreateCateStoryComponent } from './admin/catestory/create-catestory/create-catestory.component';
 import { EditCateStoryComponent } from './admin/catestory/edit-catestory/edit-catestory.component';
 import { StoryComponent } from './admin/story/story.component';
+import { CreateStoryComponent } from './admin/story/create-story/create-story.component';
+import { EditStoryComponent } from './admin/story/edit-story/edit-story.component';
+import { CateVideoComponent } from './admin/catevideo/catevideo.component';
+import { CreateCateVideoComponent } from './admin/catevideo/create-catevideo/create-catevideo.component';
+import { EditCateVideoComponent } from './admin/catevideo/edit-catevideo/edit-catevideo.component';
+import { VideoComponent } from './admin/video/video.component';
+import { CreateVideoComponent} from './admin/video/create-video/create-video.component';
+import { EditVideoComponent } from './admin/video/edit-video/edit-video.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +110,14 @@ import { StoryComponent } from './admin/story/story.component';
     CreateCateStoryComponent,
     EditCateStoryComponent,
     StoryComponent,
+    CreateStoryComponent,
+    EditStoryComponent,
+    CateVideoComponent,
+    CreateCateVideoComponent,
+    EditCateVideoComponent,
+    VideoComponent,
+    CreateVideoComponent,
+    EditVideoComponent,
   ],
   imports: [
     BrowserModule,

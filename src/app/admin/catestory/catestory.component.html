@@ -10,20 +10,22 @@
         <table class="table">
           <thead class=" text-primary">
             <th>STT</th>
-            <th>Tên danh mục</th>
-            <th>Mô tả</th>
+            <th>Title</th>
+            <th>Description</th>
             <th></th>
           </thead>
-          <tbody *ngIf="catestories && catestories.length > 0">
-            <tr *ngFor="let category of catestories; let i=index">
+          <tbody *ngIf="catestories.length == 0">no data</tbody>
+          <tbody *ngIf="catestories.length > 0">
+            <tr *ngFor="let catestory of catestories; let i=index">
               <td>{{i + 1}}</td>
-              <td>{{category.title}}</td>
-              <td>{{category.desc}}</td>
+              <td>{{catestory.title}}</td>
+              <td>{{catestory.desc}}</td>
               <td>
                 <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3"
-                  [routerLink]="[category.id, 'edit']"><i class=" fa fa-edit"></i></button>
+                  [routerLink]="[catestory.id, 'edit']"><i class=" fa fa-edit"></i></button>
                 <button *ngIf="authorization.canDelete()" type="button" class="btn btn-danger btn-sm"
-                  data-toggle="modal" data-target="#deleteCateStory" attr.data-target="#deleteCateStory">
+                  data-toggle="modal" data-target="#deleteCatestory" attr.data-target="#deleteCatestory"
+                  (click)="selectCatestory(catestory)">
                   <i class="fa fa-trash"></i>
                 </button>
               </td>
@@ -36,7 +38,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="deleteCateStory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteCatestory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -47,7 +49,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Bạn có chắc chắn muốn xóa danh mục này ?.
+        Bạn có chắc chắn muốn xóa danh mục {{current_catestory ? current_catestory.title : ''}} ?.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Trở Về</button>

@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { CateStoryService } from "../../../services/catestory.service";
+import { CateVideoService } from "../../../services/catevideo.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthorizationService } from "../../../services/authorization.service";
 import { IResponse } from "../../../interfaces/iresponse";
 import {FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-edit-catestory',
-  templateUrl: './edit-catestory.component.html',
-  styleUrls: ['./edit-catestory.component.css']
+  selector: 'app-edit-catevideo',
+  templateUrl: './edit-catevideo.component.html',
+  styleUrls: ['./edit-catevideo.component.css']
 })
-export class EditCateStoryComponent implements OnInit {
+export class EditCateVideoComponent implements OnInit {
 
   form: FormGroup;
   errors;
-  catestory_id;
+  catevideo_id;
 
   constructor(
-    protected cateStoryService: CateStoryService,
+    protected cateVideoService: CateVideoService,
     private router: ActivatedRoute,
     private route: Router,
     protected authorization: AuthorizationService
@@ -25,9 +25,9 @@ export class EditCateStoryComponent implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(params => {
-      this.catestory_id = params.id;
+      this.catevideo_id = params.id;
       this.initForm();
-      this.cateStoryService.show(this.catestory_id).subscribe((response: IResponse) => {
+      this.cateVideoService.show(this.catevideo_id).subscribe((response: IResponse) => {
         this.form.patchValue(response.data);
       });
     })
@@ -50,8 +50,8 @@ export class EditCateStoryComponent implements OnInit {
   }
 
   onSubmit() {
-    this.cateStoryService.update(this.form.value, this.catestory_id).subscribe((response: IResponse) => {
-      this.route.navigate(['/admin/dashboard/catestory']);
+    this.cateVideoService.update(this.form.value, this.catevideo_id).subscribe((response: IResponse) => {
+      this.route.navigate(['/admin/dashboard/catevideo']);
     }, error => {
       const responseErrors = error.error.errors;
       this.errors = responseErrors;

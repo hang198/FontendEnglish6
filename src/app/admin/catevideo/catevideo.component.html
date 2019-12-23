@@ -2,29 +2,30 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">Story</h4>
+        <h4 class="card-title ">Category video</h4>
       </div>
       <div class="card-body">
-        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Add story</button>
+        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Add category
+          video</button>
         <table class="table">
           <thead class=" text-primary">
             <th>STT</th>
             <th>Title</th>
-            <th>Category story</th>
+            <th>Description</th>
             <th></th>
           </thead>
-          <tbody *ngIf="stories.length == 0">no data</tbody>
-          <tbody *ngIf="stories.length > 0">
-            <tr *ngFor="let story of stories; let i=index">
+          <tbody *ngIf="catevideos.length == 0">no data</tbody>
+          <tbody *ngIf="catevideos.length > 0">
+            <tr *ngFor="let catevideo of catevideos; let i=index">
               <td>{{i + 1}}</td>
-              <td>{{story.title}}</td>
-              <td>{{story.catestory_title}}</td>
+              <td>{{catevideo.title}}</td>
+              <td>{{catevideo.desc}}</td>
               <td>
                 <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3"
-                  [routerLink]="[story.id, 'edit']"><i class=" fa fa-edit"></i></button>
+                  [routerLink]="[catevideo.id, 'edit']"><i class=" fa fa-edit"></i></button>
                 <button *ngIf="authorization.canDelete()" type="button" class="btn btn-danger btn-sm"
-                  data-toggle="modal" data-target="#deleteStory" attr.data-target="#deleteStory"
-                  (click)="selectStory(story)">
+                  data-toggle="modal" data-target="#deleteCatevideo" attr.data-target="#deleteCatevideo"
+                  (click)="selectCatevideo(catevideo)">
                   <i class="fa fa-trash"></i>
                 </button>
               </td>
@@ -37,7 +38,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="deleteStory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteCatevideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -48,7 +49,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Bạn có chắc chắn muốn xóa danh mục {{current_story ? current_story.title : ''}} ?.
+        Bạn có chắc chắn muốn xóa danh mục {{current_catevideo ? current_catevideo.title : ''}} ?.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Trở Về</button>

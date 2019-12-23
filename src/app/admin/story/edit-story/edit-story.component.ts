@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CateStoryService } from "../../../services/catestory.service";
+import { StoryService } from "../../../services/story.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthorizationService } from "../../../services/authorization.service";
 import { IResponse } from "../../../interfaces/iresponse";
 import {FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-edit-catestory',
-  templateUrl: './edit-catestory.component.html',
-  styleUrls: ['./edit-catestory.component.css']
+  selector: 'app-edit-story',
+  templateUrl: './edit-story.component.html',
+  styleUrls: ['./edit-story.component.css']
 })
-export class EditCateStoryComponent implements OnInit {
+export class EditStoryComponent implements OnInit {
 
   form: FormGroup;
+  catestories = [];
   errors;
-  catestory_id;
+  story_id;
 
   constructor(
-    protected cateStoryService: CateStoryService,
+    private cateStoryService: CateStoryService,
+    private storyService: StoryService,
     private router: ActivatedRoute,
     private route: Router,
     protected authorization: AuthorizationService
@@ -25,9 +28,12 @@ export class EditCateStoryComponent implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(params => {
-      this.catestory_id = params.id;
+      this.story_id = params.id;
       this.initForm();
-      this.cateStoryService.show(this.catestory_id).subscribe((response: IResponse) => {
+      this.cateStoryService.index().subscribe((response: IResponse) => {
+        this.catestories = response.data;
+      });
+      this.storyService.show(this.story_id).subscribe((response: IResponse) => {
         this.form.patchValue(response.data);
       });
     })
@@ -38,20 +44,17 @@ export class EditCateStoryComponent implements OnInit {
       title: new FormControl("", Validators.compose([
         Validators.required,
       ])),
-      desc: new FormControl("", Validators.compose([
+      content: new FormControl("", Validators.compose([
       ])),
-      order: new FormControl("", Validators.compose([
+      catestory_id: new FormControl("", Validators.compose([
         Validators.required,
-      ])),
-      type: new FormControl("", Validators.compose([
-        Validators.required,
-      ])),
+      ]))
     });
   }
 
   onSubmit() {
-    this.cateStoryService.update(this.form.value, this.catestory_id).subscribe((response: IResponse) => {
-      this.route.navigate(['/admin/dashboard/catestory']);
+    this.storyService.update(this.form.value, this.story_id).subscribe((response: IResponse) => {
+      this.route.navigate(['/admin/dashboard/story']);
     }, error => {
       const responseErrors = error.error.errors;
       this.errors = responseErrors;

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IQuestion } from "../../interfaces/iquestion";
-import { QuestionService } from "../../services/question.service";
 import { Router } from "@angular/router";
 import { AuthorizationService } from "../../services/authorization.service";
+import { StoryService } from "../../services/story.service";
 import { IResponse } from "../../interfaces/iresponse";
 
 @Component({
@@ -13,18 +12,36 @@ import { IResponse } from "../../interfaces/iresponse";
 export class StoryComponent implements OnInit {
 
 
-  questions: IQuestion[] = [];
+  stories = [];
+  current_story;
   page = 1;
 
-
-  protected keyWord: string;
-  protected searchedQuestions: IQuestion[] = [];
-
   constructor(
-    protected questionService: QuestionService,
-    private router: Router,
-    protected authorization: AuthorizationService
+    private route: Router,
+    protected authorization: AuthorizationService,
+    private storyService: StoryService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getAll()
+  }
+
+  getAll() {
+    this.storyService.index().subscribe((response: IResponse) => {
+      this.stories = response.data;
+    });
+  }
+
+  selectStory(story) {
+    this.current_story = story;
+  }
+
+  delete() {
+    this.storyService.delete(this.current_story.id).subscribe((response: IResponse) => {
+      if (response.status === 'success') {
+        this.getAll();
+      }
+    });
+  }
+
 }

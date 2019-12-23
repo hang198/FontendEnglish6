@@ -6,7 +6,7 @@ import {AuthService} from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class StoryService {
+export class VideoService {
 
   apiUrl: string;
   header: any;
@@ -24,22 +24,22 @@ export class StoryService {
   }
 
   index() {
-    return this.http.get(this.apiUrl + '/stories', {headers: this.header});
+    return this.http.get(this.apiUrl + '/videos', {headers: this.header});
   }
 
   create(data) {
-    return this.http.post(this.apiUrl + '/stories', data, {headers: this.header});
+    return this.http.post(this.apiUrl + '/videos', data, {headers: this.header});
   }
 
   show(id) {
-    return this.http.get(this.apiUrl + '/stories/' + id, {headers: this.header});
+    return this.http.get(this.apiUrl + '/videos/' + id, {headers: this.header});
   }
 
   update(data, id) {
-    return this.http.put(this.apiUrl + '/stories/' + id, data, {headers: this.header});
+    return this.http.put(this.apiUrl + '/videos/' + id, data, {headers: this.header});
   }
 
   delete(id) {
-    return this.http.delete(this.apiUrl + '/stories/' + id, {headers: this.header});
+    return this.http.delete(this.apiUrl + '/videos/' + id, {headers: this.header});
   }
 }

@@ -36,7 +36,7 @@ export class CateStoryService {
   }
 
   update(data, id) {
-    return this.http.post(this.apiUrl + '/catestory/' + id, data, {headers: this.header});
+    return this.http.put(this.apiUrl + '/catestory/' + id, data, {headers: this.header});
   }
 
   delete(id) {
