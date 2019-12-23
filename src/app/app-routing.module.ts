@@ -41,12 +41,15 @@ import {UserEditComponent} from './users/user-edit/user-edit.component';
 import {UserChangePasswordComponent} from './users/user-change-password/user-change-password.component';
 import {PracticeStatisticComponent} from "./admin/practice-statistic/practice-statistic.component";
 import {PracticeDetailStComponent} from "./admin/practice-statistic/practice-detail-st/practice-detail-st.component";
+import {PracticeListComponent} from "./practice-list/practice-list.component";
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'practices', component: PracticeListComponent},
+  {path: 'practices/:id', component: PracticeDetailUserComponent},
   {path: 'units', component: UnitListComponent},
   {path: 'units/:id', component: LessonListComponent},
   {path: 'lessons/detail/:id', component: LessonContentComponent},

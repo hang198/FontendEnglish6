@@ -54,6 +54,8 @@ import { UserChangePasswordComponent } from './users/user-change-password/user-c
 import { PracticeStatisticComponent } from './admin/practice-statistic/practice-statistic.component';
 import { PracticeDetailStComponent } from './admin/practice-statistic/practice-detail-st/practice-detail-st.component';
 import {MatSelectModule} from "@angular/material/select";
+import { PracticeListComponent } from './practice-list/practice-list.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +100,7 @@ import {MatSelectModule} from "@angular/material/select";
     UserChangePasswordComponent,
     PracticeStatisticComponent,
     PracticeDetailStComponent,
+    PracticeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +115,7 @@ import {MatSelectModule} from "@angular/material/select";
     MatOptionModule,
     FormsModule,
     MatSelectModule,
+    AngularEditorModule
   ],
   providers: [
   ],

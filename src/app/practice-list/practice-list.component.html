@@ -26,7 +26,7 @@
       <div class="home_background prlx" style="background-image:url(../../assets/home-page/images/courses_background.jpg)"></div>
     </div>
     <div class="home_content">
-      <h1>Bài học</h1>
+      <h1>Luyện tập</h1>
     </div>
   </div>
 
@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col">
           <div class="section_title text-center">
-            <h1>{{unit.name}}</h1>
+            <h1>Luyện tập</h1>
           </div>
         </div>
       </div>
@@ -45,13 +45,13 @@
       <div class="row course_boxes">
 
         <!-- Popular Course Item -->
-        <div class="col-lg-4 course_box" *ngFor="let lesson of lessons">
+        <div class="col-lg-4 course_box" *ngFor="let practice of practices">
           <div class="card">
             <div class="card-body text-center">
               <div class="card-title">
-                <a [routerLink]="['/lessons/detail/',lesson.id]">{{lesson.name}}</a>
+                <a [routerLink]="['/practices',practice.id]">{{practice.name}}</a>
               </div>
-              <div class="card-text">Bài học số {{lesson.id}} này củng cố kiến thức về từ vựng, cấu trúc ngữ pháp,..</div>
+              <div class="card-text">Bài luyện tập số {{practice.id}} này củng cố kiến thức về từ vựng, cấu trúc ngữ pháp,..</div>
             </div>
             <div class="price_box d-flex flex-row align-items-center">
               <div class="course_author_image">

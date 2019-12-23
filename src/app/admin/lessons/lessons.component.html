@@ -4,15 +4,15 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Trang quản danh mục</h4>
+            <h4 class="card-title ">Trang quản lý bài học</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Thêm danh mục</button>
+              <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Thêm bài học</button>
               <table class="table">
                 <thead class=" text-primary">
                 <th>STT</th>
-                <th>Tên lessons</th>
+                <th>Tên bài học</th>
                 <th></th>
                 </thead>
                 <tbody *ngIf="lessons.length>0;else notdata">

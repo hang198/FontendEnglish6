@@ -7,14 +7,14 @@
         <thead class="text-primary">
         <tr>
           <th scope="col">Stt</th>
-          <th scope="col">Quiz List</th>
+          <th scope="col">Practice List</th>
         </tr>
         </thead>
         <tbody>
 
         <tr *ngFor="let practice of practices | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
           <td>{{i + 1}}</td>
-          <td>{{practice.name}}</td>
+          <td>{{practice.practice.name}}</td>
         </tr>
         </tbody>
       </table>

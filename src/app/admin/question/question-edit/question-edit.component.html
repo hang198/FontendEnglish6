@@ -41,7 +41,7 @@
                       </tr>
                       </tbody>
                       <tr>
-                        <td colspan="2"><p class="btn btn-primary col-md-1" (click)="addAnswer('',0)">+</p>
+                        <td colspan="2"><p class="btn btn-primary col-md-1" *ngIf="answers.length <= 4" (click)="addAnswer('',0)">+</p>
                         </td>
 
                       </tr>
