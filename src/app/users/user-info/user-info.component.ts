@@ -22,6 +22,7 @@ export class UserInfoComponent implements OnInit {
   getUser() {
     this.auService.getUser().subscribe((response: IResponse) => {
       this.user = response.data;
+      console.log(response.data);
     });
   }
 

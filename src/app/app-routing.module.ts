@@ -39,6 +39,8 @@ import {UserInfoComponent} from './users/user-info/user-info.component';
 import {UserResultPracticesComponent} from './users/user-result-practices/user-result-practices.component';
 import {UserEditComponent} from './users/user-edit/user-edit.component';
 import {UserChangePasswordComponent} from './users/user-change-password/user-change-password.component';
+import {PracticeStatisticComponent} from "./admin/practice-statistic/practice-statistic.component";
+import {PracticeDetailStComponent} from "./admin/practice-statistic/practice-detail-st/practice-detail-st.component";
 
 
 const routes: Routes = [
@@ -92,8 +94,8 @@ const routes: Routes = [
         ]
       },
       {path: 'users/:id/edit', component: EditUserComponent},
-      // {path: 'practice-statistic', component: PracticeStatisticComponent},
-      // {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
+      {path: 'practice-statistic', component: PracticeStatisticComponent},
+      {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
     ]
   },
   {path: '**', component: NotfoundComponent},

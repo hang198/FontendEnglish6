@@ -50,8 +50,10 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UserResultPracticesComponent } from './users/user-result-practices/user-result-practices.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
-import {UserChangePasswordComponent} from "./users/user-change-password/user-change-password.component";
-
+import { UserChangePasswordComponent } from './users/user-change-password/user-change-password.component';
+import { PracticeStatisticComponent } from './admin/practice-statistic/practice-statistic.component';
+import { PracticeDetailStComponent } from './admin/practice-statistic/practice-detail-st/practice-detail-st.component';
+import {MatSelectModule} from "@angular/material/select";
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +95,9 @@ import {UserChangePasswordComponent} from "./users/user-change-password/user-cha
     UserInfoComponent,
     UserResultPracticesComponent,
     UserEditComponent,
-    UserChangePasswordComponent
+    UserChangePasswordComponent,
+    PracticeStatisticComponent,
+    PracticeDetailStComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,8 +111,10 @@ import {UserChangePasswordComponent} from "./users/user-change-password/user-cha
     MatAutocompleteModule,
     MatOptionModule,
     FormsModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
