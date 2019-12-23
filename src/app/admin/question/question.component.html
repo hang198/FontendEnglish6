@@ -16,7 +16,6 @@
                 <thead class=" text-primary">
                 <th>STT</th>
                 <th>Content</th>
-                <th>Practice</th>
                 <th>Handle</th>
                 </thead>
                 <tbody *ngIf="searchedQuestions.length>0;else notdata">
@@ -24,7 +23,6 @@
                   <td style="width: 5px">{{i + 1}}</td>
                   <td class="content-ask"><a [routerLink]="['/admin/dashboard/question/details',question.id]">{{question.content}}</a></td>
                   <ng-template #notLevel><td>Không có dữ liệu</td></ng-template>
-                  <td>NONE</td>
                   <td>
                     <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3" [routerLink]="['/admin/dashboard/question/edit',question.id]"><i class=" fa fa-edit"></i></button>
                     <!-- Button trigger model -->

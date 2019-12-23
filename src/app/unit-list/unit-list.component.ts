@@ -21,8 +21,7 @@ export class UnitListComponent implements OnInit {
   }
   getAll() {
     this.unitService.getAll().subscribe((response: IResponse) => {
-      // this.units = response.data;
-      console.log(response.data);
+      this.units = response.data;
     }, error => {
       console.log(error);
     });

@@ -52,6 +52,8 @@ import { UserResultPracticesComponent } from './users/user-result-practices/user
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserChangePasswordComponent } from './users/user-change-password/user-change-password.component';
 import { PracticeStatisticComponent } from './admin/practice-statistic/practice-statistic.component';
+import { PracticeDetailStComponent } from './admin/practice-statistic/practice-detail-st/practice-detail-st.component';
+import {MatSelectModule} from "@angular/material/select";
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +97,7 @@ import { PracticeStatisticComponent } from './admin/practice-statistic/practice-
     UserEditComponent,
     UserChangePasswordComponent,
     PracticeStatisticComponent,
+    PracticeDetailStComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,8 +111,10 @@ import { PracticeStatisticComponent } from './admin/practice-statistic/practice-
     MatAutocompleteModule,
     MatOptionModule,
     FormsModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

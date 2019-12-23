@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Category</title>
+  <title>Bài học</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Course Project">
@@ -26,7 +26,7 @@
       <div class="home_background prlx" style="background-image:url(../../assets/home-page/images/courses_background.jpg)"></div>
     </div>
     <div class="home_content">
-      <h1>Categories</h1>
+      <h1>Bài học</h1>
     </div>
   </div>
 
@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col">
           <div class="section_title text-center">
-            <h1>Thể Loại</h1>
+            <h1>Danh sách các bài học</h1>
           </div>
         </div>
       </div>
@@ -47,18 +47,17 @@
         <!-- Popular Course Item -->
         <div class="col-lg-4 course_box" *ngFor="let unit of units">
           <div class="card">
-            <img class="card-img-top" [attr.src]="'http://localhost:8000/api/' + unit.image " alt="https://unsplash.com/@kellybrito">
+            <a [routerLink]="['/units',unit.id]"><img class="card-img-top" [attr.src]="'http://localhost:8000/api/' + unit.image " alt="image unit"></a>
             <div class="card-body text-center">
               <div class="card-title">
                 <a [routerLink]="['/units',unit.id]">{{unit.name}}</a>
               </div>
-              <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
             </div>
             <div class="price_box d-flex flex-row align-items-center">
               <div class="course_author_image">
-                <img src="../../assets/home-page/images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+                <img src="../../assets/home-page/images/av.png" alt="https://unsplash.com/@mehdizadeh">
               </div>
-              <div class="course_author_name">Vinh dz, <span>Author</span></div>
+              <div class="course_author_name">Hang kwaii, <span>Author</span></div>
             </div>
           </div>
         </div>
