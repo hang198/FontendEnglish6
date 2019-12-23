@@ -39,6 +39,10 @@ import {UserInfoComponent} from './users/user-info/user-info.component';
 import {UserResultPracticesComponent} from './users/user-result-practices/user-result-practices.component';
 import {UserEditComponent} from './users/user-edit/user-edit.component';
 import {UserChangePasswordComponent} from './users/user-change-password/user-change-password.component';
+import {CateStoryComponent} from './admin/catestory/catestory.component';
+import {CreateCateStoryComponent} from './admin/catestory/create-catestory/create-catestory.component';
+import {EditCateStoryComponent} from './admin/catestory/edit-catestory/edit-catestory.component';
+import {StoryComponent} from './admin/story/story.component';
 
 
 const routes: Routes = [
@@ -94,6 +98,10 @@ const routes: Routes = [
       {path: 'users/:id/edit', component: EditUserComponent},
       // {path: 'practice-statistic', component: PracticeStatisticComponent},
       // {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
+      {path: 'catestory', component: CateStoryComponent},
+      {path: 'catestory/create', component: CreateCateStoryComponent},
+      {path: 'catestory/:id/edit', component: EditCateStoryComponent},
+      {path: 'story', component: StoryComponent},
     ]
   },
   {path: '**', component: NotfoundComponent},
