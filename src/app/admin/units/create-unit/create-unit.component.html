@@ -17,7 +17,7 @@
                              class="form-control mb-2">
                       <div *ngIf="validators.hasOwnProperty('name')"
                            class="alert alert-danger">{{validators.name}}</div>
-                      <label>Tên Unit:</label>
+                      <label>Tên tiếng Việt:</label>
                       <input [class.is-invalid]="validators.hasOwnProperty('name_vi')" type="text" formControlName="name_vi"
                              class="form-control mb-2">
                       <div *ngIf="validators.hasOwnProperty('name_vi')"

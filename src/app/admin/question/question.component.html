@@ -15,8 +15,8 @@
               <table class="table col-form-label">
                 <thead class=" text-primary">
                 <th>STT</th>
-                <th>Content</th>
-                <th>Handle</th>
+                <th>Tên câu hỏi</th>
+                <th>Xử lý</th>
                 </thead>
                 <tbody *ngIf="searchedQuestions.length>0;else notdata">
                 <tr *ngFor="let question of searchedQuestions | paginate : {currentPage: page, itemsPerPage: 10} ; let i = index">

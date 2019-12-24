@@ -1,6 +1,6 @@
 <div class="container">
   <div>.</div>
-  <div style="color: black"><h5>Bài Test: {{points[0].practice.name}}</h5></div>
+  <div style="color: black"><h5>Bài luyện tập: {{points[0].practice.name}}</h5></div>
   <div class="filter">
     <div class="circlecheck float-left">
       <input type="radio" id="f-option" class="circle-1 mr-1" name="selector"
@@ -24,8 +24,8 @@
         <thead>
         <tr>
           <th scope="col">Stt</th>
-          <th scope="col">User List</th>
-          <th scope="col">Point</th>
+          <th scope="col">Danh sách người dùng</th>
+          <th scope="col">Điểm</th>
         </tr>
         </thead>
         <tbody *ngIf="points.length>0;else notdata ">
@@ -37,7 +37,7 @@
         </tbody>
         <ng-template #notdata>
           <tr>
-            <td>empty</td>
+            <td>Không có dữ liệu</td>
           </tr>
         </ng-template>
       </table>

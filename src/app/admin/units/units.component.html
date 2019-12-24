@@ -19,7 +19,7 @@
                 </thead>
                 <tbody *ngIf="units.length>0;else notdata">
                 <tr *ngFor="let unit of units | paginate: { itemsPerPage: 5, currentPage: page }; let i=index">
-                  <td>{{i + 1}}</td>
+                  <td>{{i+1}}</td>
                   <td>{{unit.name}}</td>
                   <td>{{unit.name_vi}}</td>
                   <td><img *ngIf="unit.image" style="max-width: 200px" [attr.src]=" 'http://localhost:8000/api/' + unit.image" alt=""></td>

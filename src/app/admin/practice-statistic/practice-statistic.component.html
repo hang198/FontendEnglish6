@@ -2,22 +2,22 @@
 <div>.</div>
 
 <div class="card">
-  <h5 class="card-header">Practice Statistic</h5>
+  <h5 class="card-header">Trang quản lý trạng thái bài luyện tập</h5>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table">
         <thead class="text-primary" >
         <tr>
           <th scope="col">STT</th>
-          <th scope="col">Name</th>
-          <th scope="col">Users do test</th>
+          <th scope="col">Tên người dùng</th>
+          <th scope="col">Bài luyện tập đã làm</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let practice of practices | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
           <th scope="row">{{i +1}}</th>
           <td>{{practice.name}}</td>
-          <td><a [routerLink]="['/admin/dashboard/practice-statistic',practice.id]">click</a></td>
+          <td><a [routerLink]="['/admin/dashboard/practice-statistic',practice.id]">Chi tiết</a></td>
         </tr>
         </tbody>
       </table>

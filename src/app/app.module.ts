@@ -63,7 +63,6 @@ import { EditCateVideoComponent } from './admin/catevideo/edit-catevideo/edit-ca
 import { VideoComponent } from './admin/video/video.component';
 import { CreateVideoComponent} from './admin/video/create-video/create-video.component';
 import { EditVideoComponent } from './admin/video/edit-video/edit-video.component';
-import { UserChangePasswordComponent } from './users/user-change-password/user-change-password.component';
 import { PracticeStatisticComponent } from './admin/practice-statistic/practice-statistic.component';
 import { PracticeDetailStComponent } from './admin/practice-statistic/practice-detail-st/practice-detail-st.component';
 import {MatSelectModule} from "@angular/material/select";
