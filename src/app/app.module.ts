@@ -50,7 +50,6 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UserResultPracticesComponent } from './users/user-result-practices/user-result-practices.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
-import {UserChangePasswordComponent} from "./users/user-change-password/user-change-password.component";
 import { CateStoryComponent } from './admin/catestory/catestory.component';
 import { CreateCateStoryComponent } from './admin/catestory/create-catestory/create-catestory.component';
 import { EditCateStoryComponent } from './admin/catestory/edit-catestory/edit-catestory.component';
@@ -69,6 +68,12 @@ import { PracticeDetailStComponent } from './admin/practice-statistic/practice-d
 import {MatSelectModule} from "@angular/material/select";
 import { PracticeListComponent } from './practice-list/practice-list.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import {CatestoryListComponent} from "./catestory-list/catestory-list.component";
+import {StoryListComponent} from "./story-list/story-list.component";
+import {StoryViewComponent} from "./story-view/story-view.component";
+import {CatevideoListComponent} from "./catevideo-list/catevideo-list.component";
+import {VideoListComponent} from "./video-list/video-list.component";
+import {VideoViewComponent} from "./video-view/video-view.component";
 
 @NgModule({
   declarations: [
@@ -127,6 +132,12 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     PracticeStatisticComponent,
     PracticeDetailStComponent,
     PracticeListComponent,
+    CatestoryListComponent,
+    StoryListComponent,
+    StoryViewComponent,
+    CatevideoListComponent,
+    VideoListComponent,
+    VideoViewComponent,
   ],
   imports: [
     BrowserModule,
