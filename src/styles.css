@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cover-image {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0px 1px 4px 1px grey
+}
+.icon-cover-image {
+  display: none !important;
+  position: absolute;
+  top: 70px;
+  left: 90px;
+  font-size: 40px !important;
+  color: white;
+  text-shadow: 5px 5px 15px grey;
+}
+.cover-image:hover > .icon-cover-image {
+  display: block !important;
+}
+
+.cover-image input {
+  display: none;
+}

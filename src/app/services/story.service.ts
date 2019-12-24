@@ -42,4 +42,8 @@ export class StoryService {
   delete(id) {
     return this.http.delete(this.apiUrl + '/stories/' + id, {headers: this.header});
   }
+
+  uploadImage(data: FormData) {
+    return this.http.post(this.apiUrl + '/images', data, {headers: this.header});
+  }
 }

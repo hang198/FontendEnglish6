@@ -40,7 +40,10 @@ export class CreateStoryComponent implements OnInit {
       ])),
       catestory_id: new FormControl("", Validators.compose([
         Validators.required,
-      ]))
+      ])),
+      image: new FormControl("", Validators.compose([
+        Validators.required,
+      ])),
     });
   }
 
@@ -54,5 +57,16 @@ export class CreateStoryComponent implements OnInit {
         this.route.navigate(['/forbidden']);
       }
     });
+  }
+
+  handleInputChange(e) {
+    let file = e.target.files[0];
+    if (file) {
+      let formData: FormData = new FormData();
+      formData.append('image', file, file.name);
+      this.storyService.uploadImage(formData).subscribe((response: IResponse) => {
+        this.form.get("image").setValue(response.data);
+      });
+    }
   }
 }

@@ -42,4 +42,8 @@ export class CateVideoService {
   delete(id) {
     return this.http.delete(this.apiUrl + '/catevideo/' + id, {headers: this.header});
   }
+
+  uploadImage(data: FormData) {
+    return this.http.post(this.apiUrl + '/images', data, {headers: this.header});
+  }
 }

@@ -38,6 +38,9 @@ export class CreateCateStoryComponent implements OnInit {
       type: new FormControl("", Validators.compose([
         Validators.required,
       ])),
+      image: new FormControl("", Validators.compose([
+        Validators.required,
+      ])),
     });
   }
 
@@ -51,5 +54,16 @@ export class CreateCateStoryComponent implements OnInit {
         this.route.navigate(['/forbidden']);
       }
     });
+  }
+
+  handleInputChange(e) {
+    let file = e.target.files[0];
+    if (file) {
+      let formData: FormData = new FormData();
+      formData.append('image', file, file.name);
+      this.cateStoryService.uploadImage(formData).subscribe((response: IResponse) => {
+        this.form.get("image").setValue(response.data);
+      });
+    }
   }
 }
