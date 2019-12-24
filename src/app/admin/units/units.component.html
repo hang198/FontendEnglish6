@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Trang quản danh mục</h4>
+            <h4 class="card-title ">Trang quản lý danh mục</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -22,6 +22,7 @@
                   <td>{{unit.name}}</td>
                   <td><img *ngIf="unit.image" style="max-width: 200px" [attr.src]=" 'http://localhost:8000/api/' + unit.image" alt=""></td>
                   <td>
+<!--                  <td>{{unit.image}}</td>-->
                     <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3" [routerLink]="[unit.id,'edit']"><i class=" fa fa-edit"></i></button>
                     <button *ngIf="authorization.canDelete()" type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                             data-target="#exampleModal +"

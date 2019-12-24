@@ -41,7 +41,7 @@
                       </tr>
                       </tbody>
                       <tr>
-                        <td colspan="2"><p class="btn btn-primary col-md-1" (click)="addAnswer('',0)">+</p>
+                        <td colspan="2"><p class="btn btn-primary col-md-1" *ngIf="answers.length <= 4" (click)="addAnswer('',0)">+</p>
                         </td>
 
                       </tr>
@@ -49,7 +49,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <button [disabled]="form.invalid" class="btn btn-primary btn-sm">Sửa</button>
-                    <a class="btn btn-danger btn-sm ml-2" routerLink="/admin/dashboard/ask"> Trở Về</a>
+                    <a class="btn btn-danger btn-sm ml-2" routerLink="/admin/dashboard/question"> Trở Về</a>
                   </div>
                 </div>
               </form>

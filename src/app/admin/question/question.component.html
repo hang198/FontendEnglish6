@@ -4,11 +4,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">ASK manager</h4>
+            <h4 class="card-title ">Trang quản lý câu hỏi</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <button class="col-md-7" *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="/admin/dashboard/question/create">Create</button>
+              <button class="col-md-7" *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="/admin/dashboard/question/create">Tạo mới câu hỏi</button>
               <mat-form-field class="col-md-5 ml-5 " style="position: relative; left: 0">
                 <input  class="col-md-5" type="text" placeholder="Tìm kiếm câu hỏi" [(ngModel)]="keyWord" (ngModelChange)="search()" matInput>
               </mat-form-field>
@@ -16,7 +16,6 @@
                 <thead class=" text-primary">
                 <th>STT</th>
                 <th>Content</th>
-                <th>Practice</th>
                 <th>Handle</th>
                 </thead>
                 <tbody *ngIf="searchedQuestions.length>0;else notdata">
@@ -24,7 +23,6 @@
                   <td style="width: 5px">{{i + 1}}</td>
                   <td class="content-ask"><a [routerLink]="['/admin/dashboard/question/details',question.id]">{{question.content}}</a></td>
                   <ng-template #notLevel><td>Không có dữ liệu</td></ng-template>
-                  <td>NONE</td>
                   <td>
                     <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3" [routerLink]="['/admin/dashboard/question/edit',question.id]"><i class=" fa fa-edit"></i></button>
                     <!-- Button trigger model -->

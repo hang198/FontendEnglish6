@@ -14,7 +14,6 @@ export class UnitListComponent implements OnInit {
   units: IUnit[];
 
   constructor(private unitService: UnitService, private router: Router) { }
-  private id: string;
 
   ngOnInit() {
     this.getAll();
@@ -23,7 +22,7 @@ export class UnitListComponent implements OnInit {
     this.unitService.getAll().subscribe((response: IResponse) => {
       this.units = response.data;
     }, error => {
-      console.log(error);
+      console.log(error.error);
     });
   }
 

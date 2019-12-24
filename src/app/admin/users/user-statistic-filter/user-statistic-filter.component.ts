@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {Practice} from "../../../practice-detail-user/models";
+import {PracticeService} from "../../../services/practice.service";
+import {IResponse} from "../../../interfaces/iresponse";
 
 @Component({
   selector: 'app-user-statistic-filter',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserStatisticFilterComponent implements OnInit {
 
-  constructor() { }
+  id;
+  p = 1;
+  points;
 
-  ngOnInit() {
+  constructor(private routerMap: ActivatedRoute, private practiceService: PracticeService) {
   }
 
+  ngOnInit() {
+    this.id = this.practiceService.getID();
+    this.getPointsMax();
+  }
+
+  getPointsMax() {
+    this.practiceService.getPointsMax(this.id).subscribe((response: IResponse) => {
+      this.points = response.data;
+    });
+  }
 }

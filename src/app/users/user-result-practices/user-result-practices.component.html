@@ -8,7 +8,7 @@
       <div class="outer-circle"></div>
     </div>
     <div class="circlecheck float-left ml-3 ">
-      <input type="radio" id="g-option" class="circle-2 mr-1" name="selector" (click)="getQuizAndPointSort()">
+      <input type="radio" id="g-option" class="circle-2 mr-1" name="selector" (click)="getPracticeAndPointSort()">
       <label for="g-option">Điểm số cao nhất</label>
 
       <div class="outer-circle"></div>
@@ -22,9 +22,9 @@
       <th><strong>Điểm</strong></th>
     </tr>
     </thead>
-    <tr *ngFor="let quiz of data | paginate: { itemsPerPage: 5, currentPage: p }">
-      <td>{{quiz.quiz.name}}</td>
-      <td>{{quiz.point}}</td>
+    <tr *ngFor="let practice of data | paginate: { itemsPerPage: 5, currentPage: p }">
+      <td>{{practice.practice.name}}</td>
+      <td>{{practice.point}}</td>
     </tr>
   </table>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>

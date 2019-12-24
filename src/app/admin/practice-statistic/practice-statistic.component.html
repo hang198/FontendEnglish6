@@ -1,0 +1,29 @@
+<div class="text-center"><h1></h1></div>
+<div>.</div>
+
+<div class="card">
+  <h5 class="card-header">Practice Statistic</h5>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="text-primary" >
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Name</th>
+          <th scope="col">Users do test</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let practice of practices | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+          <th scope="row">{{i +1}}</th>
+          <td>{{practice.name}}</td>
+          <td><a [routerLink]="['/admin/dashboard/practice-statistic',practice.id]">click</a></td>
+        </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+    </div>
+  </div>
+</div>

@@ -29,7 +29,10 @@ export class UserService {
   getById(id) {
     return this.client.get(this.apiUrl + '/users/' + id, {headers: this.headers});
   }
-
+  update(formData: FormData, id: string) {
+    const headers = this.authService.getHeader();
+    return this.client.post(this.apiUrl + '/users/' + id, formData, {headers});
+  }
   changeRole(formData: FormData, id: string) {
     return this.client.post(this.apiUrl + '/users/' + id + '/change-role', formData, {headers: this.headers});
   }

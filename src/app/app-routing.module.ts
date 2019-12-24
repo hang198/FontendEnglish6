@@ -51,12 +51,18 @@ import { EditCateVideoComponent } from './admin/catevideo/edit-catevideo/edit-ca
 import { VideoComponent } from './admin/video/video.component';
 import { CreateVideoComponent} from './admin/video/create-video/create-video.component';
 import { EditVideoComponent } from './admin/video/edit-video/edit-video.component';
+import {PracticeStatisticComponent} from "./admin/practice-statistic/practice-statistic.component";
+import {PracticeDetailStComponent} from "./admin/practice-statistic/practice-detail-st/practice-detail-st.component";
+import {PracticeListComponent} from "./practice-list/practice-list.component";
+
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'practices', component: PracticeListComponent},
+  {path: 'practices/:id', component: PracticeDetailUserComponent},
   {path: 'units', component: UnitListComponent},
   {path: 'units/:id', component: LessonListComponent},
   {path: 'lessons/detail/:id', component: LessonContentComponent},
@@ -104,8 +110,6 @@ const routes: Routes = [
         ]
       },
       {path: 'users/:id/edit', component: EditUserComponent},
-      // {path: 'practice-statistic', component: PracticeStatisticComponent},
-      // {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
       {path: 'catestory', component: CateStoryComponent},
       {path: 'catestory/create', component: CreateCateStoryComponent},
       {path: 'catestory/:id/edit', component: EditCateStoryComponent},
@@ -118,6 +122,8 @@ const routes: Routes = [
       {path: 'video', component: VideoComponent},
       {path: 'video/create', component: CreateVideoComponent},
       {path: 'video/:id/edit', component: EditVideoComponent},
+      {path: 'practice-statistic', component: PracticeStatisticComponent},
+      {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
     ]
   },
   {path: '**', component: NotfoundComponent},
