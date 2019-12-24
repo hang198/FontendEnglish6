@@ -35,7 +35,8 @@ export class EditUnitComponent implements OnInit {
       console.log(response.data);
       this.unit = response.data;
       this.form.patchValue({
-        name: [response.data.name]
+        name: [response.data.name],
+        name_vi: [response.data.name_vi]
       });
     });
   }
@@ -57,6 +58,7 @@ export class EditUnitComponent implements OnInit {
   initFormGroup() {
     this.form = this.fb.group({
       name: [''],
+      name_vi: ['']
     });
   }
 
@@ -64,6 +66,7 @@ export class EditUnitComponent implements OnInit {
   initFormData() {
     const formData = new FormData();
     formData.append('name', this.form.get('name').value);
+    formData.append('name_vi', this.form.get('name_vi').value);
     if (this.image) {
       formData.append('image', this.image);
     }

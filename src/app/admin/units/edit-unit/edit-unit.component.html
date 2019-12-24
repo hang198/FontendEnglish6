@@ -12,17 +12,23 @@
                 <div class="row">
                   <div class="col-md-5">
                     <div class="form-group col-md-12">
-                      <label>Unit Name:</label>
+                      <label>Tên Unit:</label>
                       <input [class.is-invalid]="validators.hasOwnProperty('name')" type="text" formControlName="name"
                              class="form-control mb-2">
                       <div *ngIf="validators.hasOwnProperty('name')"
                            class="alert alert-danger">{{validators.name}}</div>
+                      <label>Tên tiếng Việt:</label>
+                      <input [class.is-invalid]="validators.hasOwnProperty('name_vi')" type="text" formControlName="name_vi"
+                             class="form-control mb-2">
+                      <div *ngIf="validators.hasOwnProperty('name_vi')"
+                           class="alert alert-danger">{{validators.name_vi}}</div>
                       <label>Ảnh: </label>
                       <br>
                       <input type="file" (change)="changeImage($event.target.files)">
                     </div>
                     <div class="form-group col-md-12">
-                      <button class="btn btn-primary btn-sm">Tạo</button>
+                      <button class="btn btn-primary btn-sm">Sửa</button>
+                      <a class="btn btn-danger btn-sm ml-2" routerLink="/admin/dashboard/units"> Trở Về</a>
                     </div>
                   </div>
                   <div class="col-md-7">

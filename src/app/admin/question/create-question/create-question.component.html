@@ -48,8 +48,8 @@
                       </tr>
                       </tbody>
                       <tr>
-                        <td colspan="2"><p class="btn btn-primary col-md-1" (click)="addAnswer()"  >+</p>
-                          <p class="btn btn-danger col-md-1 ml-2" (click)="removeAnswer()">-</p></td>
+                        <td colspan="2"><p class="btn btn-primary col-md-1" *ngIf="count < 4" (click)="addAnswer()"  >+</p>
+                          <p class="btn btn-danger col-md-1 ml-2" *ngIf="count > 1" (click)="removeAnswer()">-</p></td>
 
                       </tr>
                     </table>

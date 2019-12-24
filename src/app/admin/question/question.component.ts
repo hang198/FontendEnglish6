@@ -17,6 +17,7 @@ export class QuestionComponent implements OnInit {
   page = 1;
 
 
+
   protected keyWord: string;
   protected searchedQuestions: IQuestion[] = [];
 

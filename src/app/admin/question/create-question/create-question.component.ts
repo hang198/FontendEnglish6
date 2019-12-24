@@ -17,6 +17,7 @@ export class CreateQuestionComponent implements OnInit {
   answers = [];
   errors: IError = {};
   disable: any;
+  count = 1;
 
   constructor(private fb: FormBuilder,
               private questionService: QuestionService,
@@ -64,10 +65,13 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   addAnswer() {
-      (this.form.get('answer') as FormArray).controls.push(this.initAnswer());
+    this.count++;
+    console.log(this.count);
+    (this.form.get('answer') as FormArray).controls.push(this.initAnswer());
   }
 
   removeAnswer() {
     (this.form.get('answer') as FormArray).controls.pop();
+    this.count--;
   }
 }

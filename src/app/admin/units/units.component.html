@@ -13,6 +13,7 @@
                 <thead class=" text-primary">
                 <th>STT</th>
                 <th>Tên danh mục</th>
+                <th>Tên tiếng Việt</th>
                 <th>Ảnh</th>
                 <th></th>
                 </thead>
@@ -20,9 +21,9 @@
                 <tr *ngFor="let unit of units | paginate: { itemsPerPage: 5, currentPage: page }; let i=index">
                   <td>{{i + 1}}</td>
                   <td>{{unit.name}}</td>
+                  <td>{{unit.name_vi}}</td>
                   <td><img *ngIf="unit.image" style="max-width: 200px" [attr.src]=" 'http://localhost:8000/api/' + unit.image" alt=""></td>
                   <td>
-<!--                  <td>{{unit.image}}</td>-->
                     <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3" [routerLink]="[unit.id,'edit']"><i class=" fa fa-edit"></i></button>
                     <button *ngIf="authorization.canDelete()" type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                             data-target="#exampleModal +"
