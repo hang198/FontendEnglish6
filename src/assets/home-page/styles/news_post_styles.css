@@ -135,14 +135,14 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 ::-webkit-input-placeholder
 {
@@ -156,14 +156,14 @@ h6::selection
 	font-weight: 500 !important;
 	color: #a5a5a5 !important;
 }
-::-moz-placeholder /* Firefox 19+ */ 
+::-moz-placeholder /* Firefox 19+ */
 {
 	font-size: 14px !important;
 	font-weight: 500 !important;
 	color: #a5a5a5 !important;
-} 
+}
 :-ms-input-placeholder
-{ 
+{
 	font-size: 14px !important;
 	font-weight: 500 !important;
 	color: #a5a5a5 !important;
@@ -288,12 +288,12 @@ section
 	transition: all 200ms ease;
 }
 .header.scrolled
-{	
+{
 	top: 15px;
 }
 .header.scrolled .header_content::before
 {
-	box-shadow: 0px 20px 49px rgba(0,0,0,0.17);
+	box-shadow: 0px 10px 49px rgba(0,0,0,0.17);
 }
 .header_content
 {
@@ -309,7 +309,7 @@ section
 	width: 100%;
 	height: 100%;
 	content: '';
-	box-shadow: 0px 20px 49px rgba(0,0,0,0.67);
+	box-shadow: 0px 10px 49px rgba(0,0,0,0.67);
 	z-index: -1;
 }
 
@@ -320,7 +320,7 @@ section
 .logo_container
 {
 	display: inline-block;
-	padding-left: 76px;
+	padding-left: 36px;
 }
 .logo span
 {
@@ -341,7 +341,7 @@ section
 {
 	display: inline-block;
 	margin-left: auto;
-	padding-right: 93px;
+	padding-right: 20px;
 }
 .main_nav
 {
@@ -350,7 +350,7 @@ section
 .main_nav_item
 {
 	display: inline-block;
-	margin-right: 40px;
+	margin-right: 10px;
 }
 .main_nav_item:last-child
 {
@@ -412,7 +412,7 @@ section
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-	right: 20px;
+	right: 10px;
 	display: none;
 	cursor: pointer;
 }
@@ -753,7 +753,7 @@ section
 }
 .news_post
 {
-	
+
 }
 .news_post:last-child
 {
@@ -1217,7 +1217,7 @@ section
 11.2 Footer Content
 *********************************/
 
-.footer_content 
+.footer_content
 {
 	padding-top: 80px;
 	padding-bottom: 83px;

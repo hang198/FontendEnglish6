@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">Edit video</h4>
+        <h4 class="card-title ">Chỉnh sửa video</h4>
       </div>
       <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="form-group col-md-12">
-              <label>Title:</label>
+              <label>Tiêu đề:</label>
               <input formControlName="title" type="text" class="form-control mb-2 ask-form">
               <div *ngIf="errors" >
                 <div class="alert alert-danger" *ngFor="let error of errors.content">{{error}}</div>
@@ -22,13 +22,13 @@
               </div>
             </div>
             <div class="form-group col-md-12">
-              <label>Category video:</label>
+              <label>Thư mục video:</label>
               <select formControlName="catevideo_id" class="form-control mb-2">
                 <option *ngFor="let catevideo of catevideos;" value="{{catevideo.id}}">{{catevideo.title}}</option>
               </select>
             </div>
             <div class="form-group col-md-12">
-              <div class="mb-2">Image:</div>
+              <div class="mb-2">Ảnh:</div>
               <label class="cover-image">
                 <img [src]="form.get('image').value ? 'http://localhost:8000/api/images/' + form.get('image').value : 'assets/assets/img/image-solid.png'" width="220" height="180">
                 <i class="fa fa-camera icon-cover-image"></i>

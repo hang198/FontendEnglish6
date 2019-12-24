@@ -31,15 +31,16 @@ export class LessonContentComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
   }
   getLessonByUnitId() {
-    this.lessonService.getByUnitID(this.id).subscribe((
+    this.lessonService.getById(this.id).subscribe((
       response: IResponse) => {
+      console.log(response)
       this.lesson = response.data;
     }, error => {
       console.log(error.error);
     });
   }
   getPracticeByLessonId() {
-    this.practiceService.getByLessonID(this.id).subscribe((res: IResponse) => {
+    this.lessonService.getPracticesIntoLesson(this.id).subscribe((res: IResponse) => {
       this.practice = res.data;
     });
   }

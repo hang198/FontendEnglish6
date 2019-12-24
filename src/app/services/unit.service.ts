@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment as env} from '../../environments/environment';
 import {AuthService} from './auth.service';
+import {Observable} from "rxjs";
+import {IHttpResult} from "../interfaces/Ihttp-result";
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +27,8 @@ export class UnitService {
     this.headers = this.auth.getHeader();
   }
 
-  getAll() {
-    return this.http.get(this.apiUrl + '/units', {headers: this.headers});
+  getAll(): Observable<IHttpResult> {
+    return this.http.get<IHttpResult>(this.apiUrl + '/units', {headers: this.headers});
   }
 
   create(data) {

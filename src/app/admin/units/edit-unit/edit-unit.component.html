@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Edit Unit</h4>
+            <h4 class="card-title ">Chỉnh sửa Unit</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -12,6 +12,11 @@
                 <div class="row">
                   <div class="col-md-5">
                     <div class="form-group col-md-12">
+                      <label>Số thứ tự:</label>
+                      <input [class.is-invalid]="validators.hasOwnProperty('order')" type="number" formControlName="order"
+                             class="form-control mb-2">
+                      <div *ngIf="validators.hasOwnProperty('order')"
+                           class="alert alert-danger">{{validators.order}}</div>
                       <label>Tên Unit:</label>
                       <input [class.is-invalid]="validators.hasOwnProperty('name')" type="text" formControlName="name"
                              class="form-control mb-2">

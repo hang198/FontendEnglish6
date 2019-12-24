@@ -11,15 +11,18 @@ import {UnitService} from '../services/unit.service';
 })
 export class UnitListComponent implements OnInit {
 
-  units: IUnit[];
+  units: IUnit[] = [];
 
   constructor(private unitService: UnitService, private router: Router) { }
 
   ngOnInit() {
+    console.log(123)
     this.getAll();
   }
   getAll() {
-    this.unitService.getAll().subscribe((response: IResponse) => {
+    this.unitService.getAll()
+      .subscribe(response => {
+    //  console.log(response.data);
       this.units = response.data;
     }, error => {
       console.log(error.error);

@@ -73,6 +73,7 @@ import {StoryViewComponent} from "./story-view/story-view.component";
 import {CatevideoListComponent} from "./catevideo-list/catevideo-list.component";
 import {VideoListComponent} from "./video-list/video-list.component";
 import {VideoViewComponent} from "./video-view/video-view.component";
+import {UserChangePasswordComponent} from "./users/user-change-password/user-change-password.component";
 
 @NgModule({
   declarations: [

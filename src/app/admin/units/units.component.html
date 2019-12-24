@@ -4,11 +4,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Trang quản lý danh mục</h4>
+            <h4 class="card-title ">Trang quản lý danh mục bài học </h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Thêm danh mục</button>
+              <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Thêm danh mục bài học </button>
               <table class="table">
                 <thead class=" text-primary">
                 <th>STT</th>
@@ -19,7 +19,7 @@
                 </thead>
                 <tbody *ngIf="units.length>0;else notdata">
                 <tr *ngFor="let unit of units | paginate: { itemsPerPage: 5, currentPage: page }; let i=index">
-                  <td>{{i+1}}</td>
+                  <td>{{unit.order}}</td>
                   <td>{{unit.name}}</td>
                   <td>{{unit.name_vi}}</td>
                   <td><img *ngIf="unit.image" style="max-width: 200px" [attr.src]=" 'http://localhost:8000/api/' + unit.image" alt=""></td>

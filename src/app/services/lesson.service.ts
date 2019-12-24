@@ -49,4 +49,8 @@ export class LessonService {
   getByID(id) {
     return this.http.get(this.apiUrl + '/lessons/' + id, {headers: this.headers});
   }
+
+  getPracticesIntoLesson(id: string) {
+    return this.http.get(this.apiUrl + '/lessons/' + id + '/practices' , {headers: this.headers});
+  }
 }

@@ -49,7 +49,7 @@
           <div class="card">
             <div class="card-body text-center">
               <div class="card-title">
-                <a [routerLink]="['/lessons/detail/',lesson.id]">{{lesson.name}}</a>
+                <a [routerLink]="['/lessons/detail/',lesson.id]"><div [innerHTML]="lesson.name"></div></a>
               </div>
               <div class="card-text">Bài học số {{lesson.id}} này củng cố kiến thức về từ vựng, cấu trúc ngữ pháp,..</div>
             </div>

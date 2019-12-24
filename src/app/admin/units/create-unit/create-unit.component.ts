@@ -25,6 +25,7 @@ export class CreateUnitComponent implements OnInit {
 
   initFormGroup() {
     this.form = this.fb.group({
+      order: [''],
       name: [''],
       name_vi: ['']
     });
@@ -46,6 +47,7 @@ export class CreateUnitComponent implements OnInit {
 
   initFormData() {
     const formData = new FormData();
+    formData.append('order', this.form.get('order').value);
     formData.append('name', this.form.get('name').value);
     formData.append('name_vi', this.form.get('name_vi').value);
     if (this.image) {

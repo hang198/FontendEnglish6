@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       console.log(response.token);
       this.router.navigate(['/']);
     }, error => {
-      this.message = error.error;
+      this.message = error.error.error;
       console.log(this.message);
     });
   }

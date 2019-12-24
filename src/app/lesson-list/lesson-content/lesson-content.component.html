@@ -26,7 +26,7 @@
       <div class="home_background prlx" style="background-image:url(../../../assets/home-page/images/courses_background.jpg)"></div>
     </div>
     <div class="home_content">
-      <h1>{{lesson[0].name}}</h1>
+      <h1>{{lesson.name}}</h1>
     </div>
   </div>
 
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <h1>{{lesson[0].content}}</h1>
+      <h1>{{lesson.content}}</h1>
     </div>
    <h1 class="text-center">
      <a [routerLink]="['/practice',practice.id]">{{practice.name}}</a>

@@ -16,7 +16,7 @@ export class QuestionEditComponent implements OnInit {
   id: string;
   answers = [];
   errors: IError = {};
-
+  count = 1;
   constructor(private fb: FormBuilder, private questionService: QuestionService,
               private routerMap: ActivatedRoute,
               private route: Router) {
@@ -85,10 +85,12 @@ export class QuestionEditComponent implements OnInit {
   }
 
   addAnswer(content, correct) {
+    this.count++;
     (this.form.get('answer') as FormArray).controls.push(this.initAnswer(content, correct));
   }
 
   removeAnswer(index) {
     (this.form.get('answer') as FormArray).controls.splice(index, 1);
+    this.count--;
   }
 }

@@ -37,11 +37,11 @@
                           <option value="1">Đúng</option>
                           <option value="0" selected>Sai</option>
                         </select></td>
-                        <td><p class="btn btn-danger  ml-2" (click)="removeAnswer(i)">-</p></td>
+                        <td><p class="btn btn-danger  ml-2" *ngIf="count > 1" (click)="removeAnswer(i)">-</p></td>
                       </tr>
                       </tbody>
                       <tr>
-                        <td colspan="2"><p class="btn btn-primary col-md-1" *ngIf="answers.length <= 4" (click)="addAnswer('',0)">+</p>
+                        <td colspan="2"><p class="btn btn-primary col-md-1" *ngIf="count < 4" (click)="addAnswer('',0)">+</p>
                         </td>
 
                       </tr>

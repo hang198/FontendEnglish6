@@ -3,4 +3,5 @@ export interface IUnit {
   name?: string;
   name_vi?: string;
   image?: string;
+  order? : number
 }

@@ -2,19 +2,19 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">Category video</h4>
+        <h4 class="card-title ">Trang quản lý thư mục video</h4>
       </div>
       <div class="card-body">
-        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Add category
-          video</button>
+        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">
+          Thêm thư mục video</button>
         <table class="table">
           <thead class=" text-primary">
             <th>STT</th>
-            <th>Title</th>
-            <th>Description</th>
+            <th>Tiêu đề</th>
+            <th>Mô tả</th>
             <th></th>
           </thead>
-          <tbody *ngIf="catevideos.length == 0">no data</tbody>
+          <tbody *ngIf="catevideos.length == 0">Không có dữ liệu</tbody>
           <tbody *ngIf="catevideos.length > 0">
             <tr *ngFor="let catevideo of catevideos; let i=index">
               <td>{{i + 1}}</td>

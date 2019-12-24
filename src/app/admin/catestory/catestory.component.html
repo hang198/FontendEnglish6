@@ -2,22 +2,21 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">Category story</h4>
+        <h4 class="card-title ">Trang quản lý thư mục truyện</h4>
       </div>
       <div class="card-body">
-        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Add category
-          story</button>
+        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Thêm thư mục truyện</button>
         <table class="table">
           <thead class=" text-primary">
             <th>STT</th>
-            <th>Title</th>
-            <th>Description</th>
+            <th>Tiêu đề</th>
+            <th>Mô tả</th>
             <th></th>
           </thead>
           <tbody *ngIf="catestories.length == 0">no data</tbody>
           <tbody *ngIf="catestories.length > 0">
             <tr *ngFor="let catestory of catestories; let i=index">
-              <td>{{i + 1}}</td>
+              <td>{{catestory.order}}</td>
               <td>{{catestory.title}}</td>
               <td>{{catestory.desc}}</td>
               <td>
