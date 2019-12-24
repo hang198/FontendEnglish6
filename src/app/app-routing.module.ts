@@ -54,7 +54,12 @@ import { EditVideoComponent } from './admin/video/edit-video/edit-video.componen
 import {PracticeStatisticComponent} from "./admin/practice-statistic/practice-statistic.component";
 import {PracticeDetailStComponent} from "./admin/practice-statistic/practice-detail-st/practice-detail-st.component";
 import {PracticeListComponent} from "./practice-list/practice-list.component";
-
+import {CatestoryListComponent} from "./catestory-list/catestory-list.component";
+import {StoryListComponent} from "./story-list/story-list.component";
+import {StoryViewComponent} from "./story-view/story-view.component";
+import {CatevideoListComponent} from "./catevideo-list/catevideo-list.component";
+import {VideoListComponent} from "./video-list/video-list.component";
+import {VideoViewComponent} from "./video-view/video-view.component";
 
 
 const routes: Routes = [
@@ -81,6 +86,12 @@ const routes: Routes = [
       {path: 'change-password', component: UserChangePasswordComponent}
     ], canActivateChild: [AuthGuardService]
   },
+  {path: 'catestories', component: CatestoryListComponent},
+  {path: 'catestories/:id', component: StoryListComponent},
+  {path: 'stories/:id', component: StoryViewComponent},
+  {path: 'catevideos', component: CatevideoListComponent},
+  {path: 'catevideos/:id', component: VideoListComponent},
+  {path: 'videos/:id', component: VideoViewComponent},
   {
     path: 'admin/dashboard', component: DashboardComponent,
     canActivateChild: [AuthGuardService, AuthorizationGuardGuard],

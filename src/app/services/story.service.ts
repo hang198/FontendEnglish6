@@ -46,4 +46,8 @@ export class StoryService {
   uploadImage(data: FormData) {
     return this.http.post(this.apiUrl + '/images', data, {headers: this.header});
   }
+
+  getStories(catestory_id) {
+    return this.http.get(this.apiUrl + '/stories/' + catestory_id + "/getStories", {headers: this.header});
+  }
 }
