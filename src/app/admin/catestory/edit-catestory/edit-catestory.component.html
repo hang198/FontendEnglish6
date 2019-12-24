@@ -1,0 +1,55 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Edit category story</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label>Title:</label>
+              <input formControlName="title" type="text" class="form-control mb-2 ask-form">
+              <div *ngIf="errors" >
+                <div class="alert alert-danger" *ngFor="let error of errors.content">{{error}}</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Description:</label>
+              <textarea formControlName="desc" class="form-control mb-2 ask-form"></textarea>
+              <div *ngIf="errors" >
+                <div class="alert alert-danger" *ngFor="let error of errors.content">{{error}}</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Order:</label>
+              <input formControlName="order" type="number" class="form-control mb-2 ask-form">
+              <div *ngIf="errors" >
+                <div class="alert alert-danger" *ngFor="let error of errors.content">{{error}}</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Type:</label>
+              <input formControlName="type" type="number" class="form-control mb-2 ask-form">
+              <div *ngIf="errors" >
+                <div class="alert alert-danger" *ngFor="let error of errors.content">{{error}}</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <div class="mb-2">Image:</div>
+              <label class="cover-image">
+                <img [src]="form.get('image').value ? 'http://localhost:8000/api/images/' + form.get('image').value : 'assets/assets/img/image-solid.png'" width="220" height="180">
+                <i class="fa fa-camera icon-cover-image"></i>
+                <input type="file" name="file" accept="image/*" (change)="handleInputChange($event)">
+              </label>
+            </div>
+            <div class="form-group col-md-12">
+              <button [disabled]="form.invalid" class="btn btn-primary btn-sm">Cập nhật</button>
+              <a class="btn btn-danger btn-sm ml-2" routerLink="/admin/dashboard/catestory"> Trở Về</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

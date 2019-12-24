@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Video</h4>
+      </div>
+      <div class="card-body">
+        <button *ngIf="authorization.canCreate()" class="btn btn-primary btn-sm mb-2" routerLink="create">Add video</button>
+        <table class="table">
+          <thead class=" text-primary">
+            <th>STT</th>
+            <th>Title</th>
+            <th>Category video</th>
+            <th></th>
+          </thead>
+          <tbody *ngIf="videos.length == 0">no data</tbody>
+          <tbody *ngIf="videos.length > 0">
+            <tr *ngFor="let video of videos; let i=index">
+              <td>{{i + 1}}</td>
+              <td>{{video.title}}</td>
+              <td>{{video.catevideo_title}}</td>
+              <td>
+                <button *ngIf="authorization.canEditor()" class="btn btn-primary btn-sm mr-3"
+                  [routerLink]="[video.id, 'edit']"><i class=" fa fa-edit"></i></button>
+                <button *ngIf="authorization.canDelete()" type="button" class="btn btn-danger btn-sm"
+                  data-toggle="modal" data-target="#deleteVideo" attr.data-target="#deleteVideo"
+                  (click)="selectVideo(video)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-warning" id="exampleModalLabel">Cảnh báo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xóa danh mục {{current_video ? current_video.title : ''}} ?.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Trở Về</button>
+        <button type="button" (click)="delete()" data-dismiss="modal" class="btn btn-danger">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

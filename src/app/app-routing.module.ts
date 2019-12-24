@@ -39,9 +39,22 @@ import {UserInfoComponent} from './users/user-info/user-info.component';
 import {UserResultPracticesComponent} from './users/user-result-practices/user-result-practices.component';
 import {UserEditComponent} from './users/user-edit/user-edit.component';
 import {UserChangePasswordComponent} from './users/user-change-password/user-change-password.component';
+import { CateStoryComponent } from './admin/catestory/catestory.component';
+import { CreateCateStoryComponent } from './admin/catestory/create-catestory/create-catestory.component';
+import { EditCateStoryComponent } from './admin/catestory/edit-catestory/edit-catestory.component';
+import { StoryComponent } from './admin/story/story.component';
+import { CreateStoryComponent } from './admin/story/create-story/create-story.component';
+import { EditStoryComponent } from './admin/story/edit-story/edit-story.component';
+import { CateVideoComponent } from './admin/catevideo/catevideo.component';
+import { CreateCateVideoComponent } from './admin/catevideo/create-catevideo/create-catevideo.component';
+import { EditCateVideoComponent } from './admin/catevideo/edit-catevideo/edit-catevideo.component';
+import { VideoComponent } from './admin/video/video.component';
+import { CreateVideoComponent} from './admin/video/create-video/create-video.component';
+import { EditVideoComponent } from './admin/video/edit-video/edit-video.component';
 import {PracticeStatisticComponent} from "./admin/practice-statistic/practice-statistic.component";
 import {PracticeDetailStComponent} from "./admin/practice-statistic/practice-detail-st/practice-detail-st.component";
 import {PracticeListComponent} from "./practice-list/practice-list.component";
+
 
 
 const routes: Routes = [
@@ -97,6 +110,18 @@ const routes: Routes = [
         ]
       },
       {path: 'users/:id/edit', component: EditUserComponent},
+      {path: 'catestory', component: CateStoryComponent},
+      {path: 'catestory/create', component: CreateCateStoryComponent},
+      {path: 'catestory/:id/edit', component: EditCateStoryComponent},
+      {path: 'story', component: StoryComponent},
+      {path: 'story/create', component: CreateStoryComponent},
+      {path: 'story/:id/edit', component: EditStoryComponent},
+      {path: 'catevideo', component: CateVideoComponent},
+      {path: 'catevideo/create', component: CreateCateVideoComponent},
+      {path: 'catevideo/:id/edit', component: EditCateVideoComponent},
+      {path: 'video', component: VideoComponent},
+      {path: 'video/create', component: CreateVideoComponent},
+      {path: 'video/:id/edit', component: EditVideoComponent},
       {path: 'practice-statistic', component: PracticeStatisticComponent},
       {path: 'practice-statistic/:id', component: PracticeDetailStComponent},
     ]
