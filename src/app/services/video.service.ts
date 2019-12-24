@@ -46,4 +46,8 @@ export class VideoService {
   uploadImage(data: FormData) {
     return this.http.post(this.apiUrl + '/images', data, {headers: this.header});
   }
+
+  getVideos(catevideo_id) {
+    return this.http.get(this.apiUrl + '/videos/' + catevideo_id + "/getVideos", {headers: this.header});
+  }
 }
