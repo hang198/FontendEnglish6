@@ -341,11 +341,11 @@ section
 {
 	display: inline-block;
 	margin-left: auto;
-	padding-right: 93px;
+	padding-right: 90px;
 }
 .main_nav
 {
-	margin-top: 5px;
+	margin-top: 7px;
 }
 .main_nav_item
 {
@@ -354,7 +354,7 @@ section
 }
 .main_nav_item:last-child
 {
-	margin-right: 0px;
+	margin-right: 20px;
 }
 .main_nav_item a
 {

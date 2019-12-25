@@ -16,7 +16,7 @@
           <tbody *ngIf="catestories.length == 0">no data</tbody>
           <tbody *ngIf="catestories.length > 0">
             <tr *ngFor="let catestory of catestories; let i=index">
-              <td>{{catestory.order}}</td>
+              <td>{{i+1}}</td>
               <td>{{catestory.title}}</td>
               <td>{{catestory.desc}}</td>
               <td>

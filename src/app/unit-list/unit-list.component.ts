@@ -16,7 +16,6 @@ export class UnitListComponent implements OnInit {
   constructor(private unitService: UnitService, private router: Router) { }
 
   ngOnInit() {
-    console.log(123)
     this.getAll();
   }
   getAll() {

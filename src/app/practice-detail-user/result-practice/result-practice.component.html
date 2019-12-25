@@ -12,12 +12,12 @@
       </div>
       <div class="col-12 m-4 row">
         <div class="col-5 bg-white m-3 p-0" *ngFor="let answer of question.answers; let j = index">
-          <div class="w-100 h-100 p-2 {{isCorrect(answer)}}">
+          <div class="w-70 h-70 p-2 {{isCorrect(answer)}}">
             {{alphabet[j]}}. {{answer.content}}
           </div>
         </div>
         <div class="col-md-12 row"  *ngFor="let answer of question.answers; let j = index">
-          <div class="w-100 h-100 p-2 bg-white col-md-12" *ngIf="answer.isAnswer">
+          <div class="w-70 h-70 p-2 bg-black col-md-12" *ngIf="answer.isAnswer">
             -Đáp án đúng là: {{alphabet[j]}}. {{answer.content}}
           </div>
         </div>
